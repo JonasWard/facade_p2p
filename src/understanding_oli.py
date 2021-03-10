@@ -1,4 +1,5 @@
 f_path="C:\\Users\\oli\\Documents\\reps\\facade_p2p\\data\\labelmefacade-master\\labels\\sub_set"
+import tensorflow_examples.models.pix2pix.pix2pix as p2p
 
 p2p_model=p2p.main(
     epochs=2,
