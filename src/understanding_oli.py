@@ -17,7 +17,7 @@ for gpu in gpus:
 #     print(e)
 
 p2p_model=p2p.main(
-    epochs=10,
+    epochs=100,
     enable_function=True,
     path=f_path,
     buffer_size=200,
