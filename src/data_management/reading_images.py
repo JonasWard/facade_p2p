@@ -65,21 +65,40 @@ def dict_mapping(channel_dict, label_dict, label_groups):
     return remap_dict
 
 def read_and_map_image(img, map_dict):
-    bs=img[:,:,0]
+    bs, g, r = cv.split(img)
+
+    print("read and map image")
+    print("red")
+    print(np.unique(r))
+    print(len(np.unique(r)))
+    print("green")
+    print(np.unique(g))
+    print(len(np.unique(g)))
+    print("blue")
+    print(np.unique(bs))
+    print(len(np.unique(bs)))
+
+    cv.imshow("original", img)
+    cv.waitKey(0)
+    cv.destroyAllWindows()
+
     n_img=np.copy(bs)
-    print(np.min(bs), np.max(bs))
-    print(map_dict)
+
     for k, v in map_dict.items(): n_img[bs==k] = v
     
     print(np.min(n_img), np.max(n_img))
     return n_img
 
 def pseudocolor_image(img, c_cnt, dis_name=None):
-    img=(img*(255./c_cnt)).astype(np.uint8)
-    img=cv.applyColorMap(img, cv.COLORMAP_JET)
+    print("pseudocolor images")
+    print(np.unique(img))
+    print(len(np.unique(img)))
+    
+    img_2=(img*(255./c_cnt)).astype(np.uint8)
+    img_2=cv.applyColorMap(img_2, cv.COLORMAP_JET)
     
     dis_name = "color vis" if dis_name is None else dis_name
-    cv.imshow(dis_name, img)
+    cv.imshow(dis_name, img_2)
     cv.waitKey(0)
     cv.destroyAllWindows()
 
@@ -90,6 +109,8 @@ def read_folder(f_path, map_dict):
         filename = os.fsdecode(file)
         if filename.endswith(".png"):
             img=cv.imread(os.path.join(f_path, filename))
+            print(img)
+
             img=read_and_map_image(img, map_dict)
             pseudocolor_image(img, len(set(map_dict.values())), filename)
         else:
