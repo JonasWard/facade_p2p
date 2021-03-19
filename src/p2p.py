@@ -47,7 +47,7 @@ def load(image_file):
     Input image, target image
   """
   image = tf.io.read_file(image_file)
-  image = tf.image.decode_jpeg(image)
+  image = tf.image.decode_png(image)
 
   w = tf.shape(image)[1]
 
@@ -451,7 +451,7 @@ class Pix2pix(object):
       time_list.append(wall_time_sec)
 
       # saving (checkpoint) the model every 20 epochs
-      if (epoch + 1) % 20 == 0:
+      if (epoch + 1) % 5 == 0:
         self.checkpoint.save(file_prefix=checkpoint_pr)
 
       template = 'Epoch {}, Generator loss {}, Discriminator Loss {}'
@@ -480,7 +480,6 @@ def main(epochs, enable_function, path, buffer_size, batch_size):
   checkpoint_pr = get_checkpoint_prefix()
   print ('Training ...')
   return pix2pix_object.train(train_dataset, checkpoint_pr)
-
 
 if __name__ == '__main__':
   app.run(run_main)
