@@ -1,4 +1,4 @@
-import tensorflow_examples.models.pix2pix.pix2pix as p2p
+import p2p
 
 p2p_model=p2p.main(
     epochs=2,
