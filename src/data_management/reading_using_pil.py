@@ -333,4 +333,4 @@ if __name__ == "__main__":
     # read_and_save_merged_images_from_list("/Users/jonas/Downloads/CMP_facade_DB_base/base",file_list)
     # read_and_save_merged_images("/Users/jonas/Downloads/CMP_facade_DB_base/base")
 
-    read_and_save_merged_images_butchering("/Users/jonas/Documents/GitHub/facade_p2p/data/own")
+    read_and_save_merged_images_butchering("/Users/jonas/Documents/reps/facade_p2p/data/own/crop_bis")
