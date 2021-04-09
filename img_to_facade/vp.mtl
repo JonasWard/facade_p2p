@@ -1,0 +1,8 @@
+newmtl anImage
+    Ka 1.000 1.000 1.000
+    Kd 1.000 1.000 1.000
+    Ks 1.000 1.000 1.000
+
+    map_Ka anImage.jpg
+    map_Kd anImage.jpg
+    map_Ks anImage.jpg
