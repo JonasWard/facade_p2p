@@ -94,7 +94,16 @@ def img_to_obj(img, rec = None, file_name = None):
 if __name__ == "__main__":
     import os
 
-    img_to_obj("/Users/jonas/Documents/reps/facade_p2p/img_to_facade/image.png")
+    # wondelgem = "/Users/jonas/Desktop/Wondelgem.png"
+    # allwirlen = "/Users/jonas/Desktop/Allwirlen.png"
 
-    for name, rec in dict_rectangles.items():
-        img_to_obj("/Users/jonas/Documents/reps/facade_p2p/img_to_facade/image.png", rec, name)
+    # img_to_obj(wondelgem, file_name="wondelgem")
+    # img_to_obj(allwirlen, file_name="allwirlen")
+
+    oberhausen = "/Users/jonas/Desktop/oberhausen.png"
+    img_to_obj(oberhausen, "oberhausen")
+
+    # img_to_obj("/Users/jonas/Documents/reps/facade_p2p/img_to_facade/image.png")
+
+    # for name, rec in dict_rectangles.items():
+    #     img_to_obj("/Users/jonas/Documents/reps/facade_p2p/img_to_facade/image.png", rec, name)
